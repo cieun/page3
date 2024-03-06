@@ -1,0 +1,327 @@
+@font-face {
+    font-family: Jepisode_flashback;
+    src: url("../font/Jepisode_flashback-02.woff") format(woff);
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Pretendard-Bold;
+    src: url("../font/Pretendard-Bold.woff") format(woff);
+    font-style: normal;
+}
+
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-5');
+
+*{
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+    box-sizing: border-box;
+
+}
+
+html{
+    font-size: 32px;
+}
+
+body{
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #F5F5F5;
+    box-sizing: border-box;
+}
+
+.outgoing{
+    padding: 0.5rem;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+}
+
+.menu{
+    width: 9rem;
+    height: 100%;
+    border-right: 2px solid #000;
+    margin-right: 1rem;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+}
+
+.top{
+    width: 100%;
+    border-bottom: 2px solid #000;
+    margin-bottom: 1rem;
+    padding-top: 1.9375rem;
+    padding-bottom: 2.906rem;
+    text-align: center;
+    span{
+        font-size: 3.125rem;
+        font-family: 'Jepisode_flashback';
+
+        &:nth-child(1){margin-right: 2.5rem;}
+        &:nth-child(2){margin-right: 1rem;}
+        &:nth-child(4){margin-left: 1rem;}
+    }
+
+    input{
+        border: none;
+        border-bottom: 2px solid #000;
+        outline: none;
+        width: 18rem;
+        height: 3rem;
+        font-size: 3.125rem;
+        font-family: "Jepisode_flashback";
+        text-align: center;
+    }
+}
+
+.bottom{
+    width: 100%;
+    height: 71%;
+    display: flex;
+    flex-direction: row;
+}
+
+.drawing{
+    width: 50%;
+    border-right: 2px solid #000;
+    cursor: url('../asset/pencil.png'), auto;
+
+    iframe{
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+}
+
+.canvas{
+    width: 100%;
+    height: 100%;
+
+}
+
+.letter{
+    width: 50%;
+    padding: 1rem;
+    box-sizing: border-box;
+    p{
+        font-family: "Pretendard-Bold";
+        font-size: 1rem;
+        line-height: 3.625rem;
+    }
+}
+
+.underline.short{
+    position: absolute;
+    width: 95%;
+    top: 3.812rem;
+    text-align: right;
+
+    hr{
+        border: 1.5px solid #000;
+        margin-bottom: 3.625rem;
+        &:nth-child(5){margin-bottom: 1.8rem;}
+    }
+    label{
+        font-family: "Pretendard-Bold"
+    }
+    input{
+        border:none;
+        border-bottom: 2px solid #000;
+        width: 7.75rem;
+        outline: none;
+        font-family: 'Pretendard-Bold';
+        font-size: 1rem;
+        height: 2rem;
+        text-align: center;
+    }
+}
+
+.postbox{
+    position: fixed;
+    left: 0.7rem;
+    bottom: 0.7rem;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 100%;
+    border: 2px solid #000;
+    background-color: #fff;
+    overflow: hidden;
+    cursor: pointer;
+
+    img{
+        width: 120%;
+        transform: rotate(-27.16deg);
+        position: relative;
+        top: 30px;
+        left: -25px;
+    }
+}
+
+.postbox:hover{
+    background-color: #000;
+}
+
+// 수신
+
+.receiving{
+    width: 1457px;
+    height: 776px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%) rotate(-9.33deg);
+    transform-style: preserve-3d;
+    visibility: hidden;
+
+}
+
+.face{
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background-color: #D9D9D9;
+    font-size: 1rem;
+    font-family: "Pretendard-Bold";
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.front{
+    position: absolute;
+    transform: translateZ(5px);
+
+    .underline.long{
+        position: absolute;
+        width: 95%;
+        top: 9rem;
+        left: 50%;
+        transform: translateX(-50%);
+
+        hr{
+            border: 1.5px solid #000;
+            margin-bottom: 2.8125rem;
+            &:nth-child(4){margin-bottom: 1.8rem;}
+        }
+        
+    }
+
+    p{
+        line-height: 2.8125rem;
+        &:nth-child(2){margin-bottom: 3rem;}
+    }
+    .arrow{
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        font-family: "Jepisode_flashback";
+        
+        span{
+            vertical-align:middle;
+        }
+    }
+
+    .arrow:hover{
+        color: #fff;
+    }
+
+}
+
+.back{
+    position: absolute;
+    transform: rotateY(180deg) translateZ(5px); 
+
+    #sitename{
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-180%);
+        font-family: 'Helvetica Neue', sans-serif;
+        font-size: 3.4375rem;
+        letter-spacing: -7%;                  
+    }
+
+    .screenshot{
+        height: 100%;
+        position: absolute;
+        z-index: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .curtain{
+        height: 110%;
+        position: absolute;
+        z-index: 1;
+        &:nth-child(3){left: -50px; top: -70px;}
+        &:nth-child(4){right: -50px; top: -70px;}
+    }
+    .arrow{
+        position: absolute;
+        z-index: 3;
+        right: 1rem;
+        bottom: 1rem;
+        font-family: "Jepisode_flashback";
+        
+        span{
+            vertical-align:middle;
+        }
+    }
+    .arrow:hover{
+        color: #fff;
+    }
+}
+
+@keyframes fadeOut{
+    from {
+        scale: 1;
+        rotate: 0deg;
+    }
+    to {
+        scale: 0;
+        rotate: 720deg;
+        left: -1000px;
+        bottom: -300px;
+    }
+}
+
+@keyframes fadeIn{
+    from {
+        scale: 0;
+        rotate: 707deg;
+        left: -1000px;
+        bottom: -300px;
+    }
+    to {
+        scale: 1;
+        rotate: -9.33deg;
+    }
+}
+
+@keyframes spintoBack{
+    from{
+        transform: translate(-50%, -50%) rotate(-9.33deg) rotateY(0deg);
+    }
+    to{
+        transform: translate(-50%, -50%) rotate(-9.33deg) rotateY(180deg);
+    }
+}
+
+@keyframes spintoFront{
+    from{
+        transform: translate(-50%, -50%) rotate(-9.33deg) rotateY(180deg);
+    }
+    to{
+        transform: translate(-50%, -50%) rotate(-9.33deg) rotateY(360deg);
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="outgoing">
+        <section class="menu"></section>
+        <section class="content">
+            <div class="top">
+                <span>TO</span><span>www.</span><input type="text" id="address" name="address" oninput="applyRandomColors(this.value)"><span>.com</span>
+            </div>
+            <div class="bottom">
+                <div class="drawing">
+                    <iframe src="https://cieun.github.io/sketchbook/"></iframe>
+                </div>
+                <div class="letter">
+                    <div class="underline short">
+                        <hr><hr><hr><hr><hr>
+                        <label for="from">From.</label>
+                        <input type="text" id="from" name="from">
+                    </div>
+                    <p>잘 지내고 계신가요? 당신이 "웹"이라는 국가에 이사를 가고 꽤 오랜시간이 흘렀네요. 어떤 곳에 살고 계신지 궁금해요. 당신의 편지는 너무나도 소중해요. 당신의 안부와 함께 그곳의 풍경이 어떤지 알려주세요. 답장 기다릴게요.</p>
+                </div>
+            </div>
+        </section>
+    </section>
+    <div class="postbox" id="captureButton" onclick="toggleDivs(); ">
+        <img src="./asset/postbox.png">
+    </div>
+
+    <section class="receiving">
+        <div class="face front">
+            <div class="underline long">
+                <hr><hr><hr><hr>
+                <p>From. www.<span id="from2"></span>.com</p>
+            </div>
+            <p id="to">To.</p>
+            <p> 저는 아주 잘 지내고 있어요. 여러분과 이렇게 편지를 주고받는 건 정말 즐거운 일이네요. 매일 아침 창문을 열어 이곳의 풍경을 감상하곤 하는데 세상을 이루는 HTML의 정교한 구조는 늘 저를 안심하게 해요. 요즘 세상은 정말 불안정하잖아요. 가끔은 정보의 바다에 가서 영감을 얻기도 해요. 앞으로 이곳에서의 특별한 순간을 찍어 더 많은 편지를 보내도록 할게요.
+                그럼 잘 지내세요. 바이바이.</p>
+            <p class="arrow" onclick="spintoBack()">back<span>→</span></p>
+        </div>
+        <div class="face back" id="capturedImageContainer">
+            <div id="sitename"></div>
+            <img class="screenshot" src="./asset/google.png">
+            <img class="curtain" src="./asset/curtain-left.png">
+            <img class="curtain" src="./asset/curtain-right.png">
+            <p class="arrow" onclick="spintoFront()">front<span>→</span></p>
+        </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+</html>
